@@ -23,10 +23,20 @@ struct Hello{
     n=0;
     greeting = "";
   }
+
+  void show_greeting()
+  {
+    for (int i=0; i<n; i++)
+      std::cout << greeting;;
+  }
 };
 
  int main()
  {
-  std::cout << "Hello World bitches v0.5!";
+  Hello alloha;
+  alloha.create();
+  alloha.initialize(1,"Hello World bitches v0.5!");
+  alloha.show_greeting();
+  alloha.destroy();
   return 0;
  }
