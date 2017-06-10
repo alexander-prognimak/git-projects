@@ -15,7 +15,7 @@ struct Hello{
   void create()
   {
     n=0;
-    greeting = "Hello world!!!";
+    greeting = "Hello world!";
   }
 
   void destroy()
@@ -34,7 +34,7 @@ struct Hello{
  {
   Hello alloha;
   alloha.create();
-  alloha.initialize(1,"Hello World bitches v0.1!");
+  alloha.initialize(2,"Hello World bitches v0.99!");
   alloha.show_greeting();
   alloha.destroy();
   return 0;
