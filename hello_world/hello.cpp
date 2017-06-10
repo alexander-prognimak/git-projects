@@ -15,7 +15,7 @@ struct Hello{
   void create()
   {
     n=0;
-    greeting = "Hello World";
+    greeting = "Hello World!";
   }
 
   void destroy()
