@@ -19,14 +19,15 @@ struct Hello{
   }
 
   void destroy()
+  {
     n=0;
     greeting = "";
   }
 
   void show_greeting()
   {
-    for (int i=0; i<n; i++)x
-      std::cout << greeting;
+    for(int i=0; i<n; i++)
+      std::cout << Hello::greeting << endl;
   }
 };
 
