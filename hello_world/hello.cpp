@@ -4,7 +4,7 @@ using namespace std;
 
 struct Hello{
  int n; //number of times to greet
- string  greeting; // Hello World
+ string  greeting; // greeeting line
 
  void initialize(int num, char* greet)
  {
@@ -15,7 +15,7 @@ struct Hello{
   void create()
   {
     n=0;
-    greeting = "Hello World!";
+    greeting = "Hello world test!";
   }
 
   void destroy()
