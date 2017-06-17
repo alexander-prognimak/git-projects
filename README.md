@@ -1,2 +1,2 @@
 # git-projects
-random projects pushed to main. mostly laughingh stock for Mark to review.
+random projects pushed to main. mostly laughing stock for Mark to review.
