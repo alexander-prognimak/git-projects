@@ -8,6 +8,9 @@
 
 using namespace std;
 
+#define DEBUG(a) cout << #a "=[" << a << "]" << endl;
+
+
 //NB get rid of the below
 class elements{
 public:
@@ -19,7 +22,7 @@ public:
   SeqList(int N);
   int ElementAppend(int position, int value);
   int PrintSeqList(void);
-  int LastAnswer = 0;
+  int LastAnswer;
 
 private:
   int size_N;
@@ -52,6 +55,7 @@ int SeqList::ElementAppend(int position, int value)
 
 SeqList::SeqList(int N)
 {
+  LastAnswer=0;
   SeqListArray.reserve(N);
 }
 
@@ -64,17 +68,26 @@ int main() {
     //From file
     ifstream testcase;
     testcase.open("test_case.input");
-    string qn;
-    getline(testcase,qn);
-    stringstream stream(qn);
-    stream >> N >> Q;
-    cout << "DEBUG:" << N <<" " <<Q;
+    string query;
+    getline(testcase,query);
+    stringstream stream(query);
+
+    stream >> N;
+    stream >> Q;
+
+    DEBUG(N);
+
+    SeqList SupaList(N);
 
     for (int i=0; i<Q; ++i)
     {
-      string query;
-      testcase >> query;
-      cout <<  query;
+      getline(testcase,query);
+      stringstream stream(query);
+      int st,nd,rd;
+      stream >> st;
+      stream >> nd;
+      stream >> rd;
+      cout <<  "DEBUG!"<<st<<" "<<nd<<" "<<rd<<"!"<<endl;
     }
     testcase.close();
     /* From console
