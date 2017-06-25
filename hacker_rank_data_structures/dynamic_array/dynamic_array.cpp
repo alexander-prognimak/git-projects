@@ -1,6 +1,7 @@
 #include <cmath>
 #include <cstdio>
 #include <vector>
+#include <assert.h>
 #include <iostream>
 #include <algorithm>
 #include <fstream>
@@ -9,7 +10,7 @@
 using namespace std;
 
 #define DEBUG(a) cout << #a "=[" << a << "]" << endl;
-
+bool debug_mode=false;
 
 //NB get rid of the below
 class elements{
@@ -18,11 +19,12 @@ public:
 };
 
 class SeqList{
+  int LastAnswer;
 public:
-  SeqList(int N);
+  SeqList(int N):LastAnswer(0)
+   {SeqListArray.reserve(N);};
   int ElementAppend(int position, int value);
   int PrintSeqList(void);
-  int LastAnswer;
 
 private:
   int size_N;
@@ -52,13 +54,6 @@ int SeqList::ElementAppend(int position, int value)
   return 0;
 }
 
-
-SeqList::SeqList(int N)
-{
-  LastAnswer=0;
-  SeqListArray.reserve(N);
-}
-
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
     // declarations
@@ -71,33 +66,40 @@ int main() {
     string query;
     getline(testcase,query);
     stringstream stream(query);
-
     stream >> N;
     stream >> Q;
 
-    DEBUG(N);
+    assert(N>=1);
+    assert(Q<=100000);
+
+
+    if (debug_mode)
+      {DEBUG(N);DEBUG(Q);}
 
     SeqList SupaList(N);
 
+    //Looping through queries
     for (int i=0; i<Q; ++i)
     {
       getline(testcase,query);
       stringstream stream(query);
-      int st,nd,rd;
+      int st;
+      long nd,rd;
       stream >> st;
       stream >> nd;
       stream >> rd;
-      cout <<  "DEBUG!"<<st<<" "<<nd<<" "<<rd<<"!"<<endl;
-    }
-    testcase.close();
-    /* From console
-    cin >> N >> Q;
-    for (int i=0; i<Q; ++i)
-    {
-      cin >>
-    } */
-    //Looping through queries
 
+      //Checks
+      assert(st>0 && st<3);
+      assert( nd>=0 && nd<=1000000000);
+      assert( rd>=0 && rd<=1000000000);
+
+      if (debug_mode)
+        {DEBUG(st);DEBUG(nd);DEBUG(rd);}
+
+    }
+
+    testcase.close();
     // Returning the result
 
     return 0;
