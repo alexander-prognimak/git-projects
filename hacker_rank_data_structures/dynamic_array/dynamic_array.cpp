@@ -10,6 +10,7 @@
 using namespace std;
 
 #define DEBUG(a) cout << #a "=[" << a << "]" << endl;
+
 bool debug_mode=false;
 
 //NB get rid of the below
@@ -25,7 +26,7 @@ public:
    {SeqListArray.reserve(N);};
   int ElementAppend(int position, int value);
   int PrintSeqList(void);
-
+  int ElementRemove(int position);
 private:
   int size_N;
   vector<elements> SeqListArray;
@@ -46,11 +47,18 @@ int SeqList::PrintSeqList()
   return 0;
 }
 
+int SeqList::ElementRemove(int position)
+{
+  int last_element = SeqListArray[position].values.back();
+  SeqListArray[position].values.pop_back();
+
+  return last_element;
+}
+
+
 int SeqList::ElementAppend(int position, int value)
 {
-  int new_node_size = SeqListArray[position].values.size()+1;
-  SeqListArray[position].values.reserve(new_node_size);
-  SeqListArray[position].values[new_node_size] = value;
+  SeqListArray[position].values.push_back(value);
   return 0;
 }
 
