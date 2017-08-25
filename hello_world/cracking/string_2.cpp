@@ -14,7 +14,6 @@ bool is_permutation(std::string const&  str1, std::string const&  str2)
   std::string sorted_string1=str1;
   sort(sorted_string1.begin(),sorted_string1.end());
 
-  std::string sorted_string2=str2;
   sort(sorted_string2.begin(),sorted_string2.end());
 
   if (sorted_string1!=sorted_string2)
